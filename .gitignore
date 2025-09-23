@@ -1,0 +1,92 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+terraform.rc
+.terraformrc
+tfplan*
+
+# AWS credentials and keys
+*.pem
+*.key
+aws-credentials
+.aws/
+
+# Java/Maven files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+logs/
+*.out
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# Backup files
+*.bak
+*.backup
+
+# Documentation build
+docs/_build/
+
+# Python cache (if any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules (if any JavaScript/Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Application specific
+deploy.sh.backup
+user-data.log
+
+.serena/

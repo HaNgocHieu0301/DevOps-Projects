@@ -1,0 +1,82 @@
+# DevOps-Project-01 specific .gitignore
+# This is for the Java 3-tier AWS deployment project
+
+# Terraform files (infrastructure/)
+infrastructure/*.tfstate
+infrastructure/*.tfstate.*
+infrastructure/*.tfvars
+infrastructure/*.tfvars.json
+infrastructure/.terraform/
+infrastructure/.terraform.lock.hcl
+infrastructure/crash.log
+infrastructure/crash.*.log
+infrastructure/terraform.rc
+infrastructure/.terraformrc
+infrastructure/tfplan*
+
+# AWS credentials and keys (project-wide)
+*.pem
+*.key
+aws-credentials
+
+# Java/Maven files (Java-Login-App/)
+Java-Login-App/target/
+Java-Login-App/pom.xml.tag
+Java-Login-App/pom.xml.releaseBackup
+Java-Login-App/pom.xml.versionsBackup
+Java-Login-App/pom.xml.next
+Java-Login-App/release.properties
+Java-Login-App/dependency-reduced-pom.xml
+Java-Login-App/buildNumber.properties
+Java-Login-App/.mvn/timing.properties
+Java-Login-App/.mvn/wrapper/maven-wrapper.jar
+
+# Deployment scripts
+Java-Login-App/deploy.sh.backup
+**/deploy.sh.backup
+
+# Log files (project-wide)
+**/*.log
+**/logs/
+**/*.out
+**/user-data.log
+
+# Temporary files (project-wide)
+**/*.tmp
+**/*.temp
+**/.cache/
+
+# Environment files (project-wide)
+**/.env
+**/.env.local
+**/.env.production
+**/.env.staging
+
+# Backup files (project-wide)
+**/*.bak
+**/*.backup
+
+# IDE files (project-wide but scoped)
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+*.swp
+*.swo
+*~
+
+# OS generated files (project-wide)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Application specific outputs
+MYREADME.md.backup
