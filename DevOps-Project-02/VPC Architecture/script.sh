@@ -15,7 +15,7 @@ if [[ "$DISTRO_ID" == "amzn" ]]; then
   echo "🔧 Amazon Linux 2 detected"
 
   sudo yum update -y
-  sudo yum install -y awscli httpd unzip curl
+  sudo yum install -y awscli httpd unzip curl --allowersing
 
   echo "📥 Downloading index.html from S3..."
   aws s3 cp s3://ed-web-config-project/index.html /var/www/html/
