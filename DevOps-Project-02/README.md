@@ -42,17 +42,17 @@ Customize the application dependencies mentioned below on AWS EC2 instance and c
 8. Create Security Group for bastion host allowing port 22 from public.
 9. Deploy Bastion Host EC2 instance in the Public Subnet with EIP associated.
 10. Create S3 Bucket to store application specific configuration.
-11. Create Launch Configuration with below configuration.
+11. Create Launch Template with below configuration (replacing deprecated Launch Configuration).
     1. Golden AMI
-    2. Instance Type – t2.micro
-    3. Userdata to pull the code from Bitbucket Repository  to document root folder of webserver and start the httpd service.
-    4. IAM Role granting access to Session Manager and to S3 bucket created in the previous step to pull the configuration. (Do  not grant S3 Full Access)
+    2. Instance Type – t3.micro (updated from t2.micro for better performance)
+    3. Userdata to pull the code from Git Repository to document root folder of webserver and start the httpd service.
+    4. IAM Role granting access to Session Manager and to S3 bucket created in the previous step to pull the configuration. (Do not grant S3 Full Access)
     5. Security Group allowing port 22 from Bastion Host and Port 80 from Public.
     6. Key Pair
-12. Create Auto Scaling Group with Min: 2 Max: 4 with two Private Subnets associated to 1a and 1b zones.
+12. Create Auto Scaling Group with Min: 2 Max: 4 with two Private Subnets associated to multiple AZs for high availability.
 13. Create Target Group and associate it with ASG.
-14. Create Network Load balancer in Public Subnet and add Target Group as target.
-15. Update route53 hosted zone with CNAME record routing the traffic to NLB.
+14. Create Application Load Balancer (ALB) in Public Subnets for better layer 7 routing and add Target Group as target.
+15. Update route53 hosted zone with CNAME record routing the traffic to ALB.
 
 ## Validation
 
@@ -68,7 +68,7 @@ I’d love to hear your feedback! Feel free to share your thoughts.
 📧 **Connect with me:**
 
 - **GitHub**: [@NotHarshhaa](https://github.com/NotHarshhaa)  
-- **Blog**: [ProDevOpsGuy](https://blog.prodevopsguy.xyz)  
+- **Blog**: [ProDevOpsGuy](https://blog.prodevopsguytech.com)  
 - **Telegram Community**: [Join Here](https://t.me/prodevopsguy)  
 - **LinkedIn**: [Harshhaa Vardhan Reddy](https://www.linkedin.com/in/harshhaa-vardhan-reddy/)  
 

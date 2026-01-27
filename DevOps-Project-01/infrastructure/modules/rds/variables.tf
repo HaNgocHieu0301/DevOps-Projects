@@ -1,3 +1,5 @@
+# RDS Module
+
 variable "environment" {
   description = "Environment name"
   type        = string
@@ -9,58 +11,43 @@ variable "vpc_id" {
 }
 
 variable "subnet_ids" {
-  description = "List of subnet IDs for RDS subnet group"
+  description = "List of subnet IDs for RDS"
   type        = list(string)
 }
 
 variable "security_group_ids" {
-  description = "List of security group IDs for RDS"
+  description = "List of security group IDs"
   type        = list(string)
 }
 
 variable "db_name" {
-  description = "Name of the database"
+  description = "Database name"
   type        = string
 }
 
 variable "db_username" {
-  description = "Database master username"
+  description = "Database username"
   type        = string
   sensitive   = true
 }
 
 variable "db_password" {
-  description = "Database master password"
+  description = "Database password"
   type        = string
   sensitive   = true
 }
 
-variable "db_instance_class" {
-  description = "RDS instance class"
-  type        = string
-  default     = "db.t3.micro"
+output "rds_instance_id" {
+  description = "RDS instance ID"
+  value       = aws_db_instance.main.id
 }
 
-variable "allocated_storage" {
-  description = "Allocated storage for RDS instance"
-  type        = number
-  default     = 20
+output "rds_instance_endpoint" {
+  description = "RDS instance endpoint"
+  value       = aws_db_instance.main.endpoint
 }
 
-variable "max_allocated_storage" {
-  description = "Maximum allocated storage for RDS instance"
-  type        = number
-  default     = 100
-}
-
-variable "backup_retention_period" {
-  description = "Backup retention period in days"
-  type        = number
-  default     = 7
-}
-
-variable "multi_az" {
-  description = "Enable Multi-AZ deployment"
-  type        = bool
-  default     = false
+output "rds_instance_port" {
+  description = "RDS instance port"
+  value       = aws_db_instance.main.port
 }

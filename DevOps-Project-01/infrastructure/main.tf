@@ -36,8 +36,9 @@ module "vpc" {
 module "security" {
   source = "./modules/security"
 
-  environment = var.environment
-  vpc_id      = module.vpc.vpc_id
+  environment             	= var.environment
+  vpc_id                 	= module.vpc.vpc_id
+  allowed_ssh_cidr_blocks 	= var.allowed_ssh_cidr_blocks
 }
 
 # RDS Module

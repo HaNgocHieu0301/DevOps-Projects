@@ -50,6 +50,7 @@ elif [[ "$DISTRO_ID" == "ubuntu" ]]; then
   echo "📥 Installing CloudWatch Agent..."
   curl -O https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
   sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
+  rm -f amazon-cloudwatch-agent.deb
 
 else
   echo "❌ Unsupported OS: $DISTRO_ID"
