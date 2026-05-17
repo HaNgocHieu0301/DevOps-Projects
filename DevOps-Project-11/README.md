@@ -24,7 +24,13 @@ This project demonstrates a **Two-Tier architecture on AWS** using **Terraform**
 
 ---
 
-## 🚀 Getting Started  
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Terraform** >= 1.0.0
+- **AWS CLI** configured with appropriate permissions
+- **An AWS account** with sufficient IAM permissions
 
 ### 1️⃣ Clone the Repository  
 
@@ -33,7 +39,14 @@ git clone https://github.com/NotHarshhaa/DevOps-Projects
 cd DevOps-Projects/DevOps-Project-11/
 ```  
 
-### 2️⃣ Initialize and Apply Terraform  
+### 2️⃣ Configure Variables
+
+⚠️ **Important**: Before deploying, update the `variables.tfvars` file:
+- Change `RDS-PWD` to a secure password
+- Update `DOMAIN-NAME` to your actual domain
+- Modify other values as needed for your environment
+
+### 3️⃣ Initialize and Apply Terraform  
 
 ```bash
 terraform init
@@ -41,11 +54,21 @@ terraform plan -var-file=variables.tfvars
 terraform apply -var-file=variables.tfvars --auto-approve
 ```  
 
-### 3️⃣ Cleanup (Destroy Infrastructure)  
+### 4️⃣ Cleanup (Destroy Infrastructure)  
 
 ```bash
 terraform destroy -var-file=variables.tfvars --auto-approve
 ```  
+
+---
+
+## 🔧 Configuration Files
+
+- **`main.tf`** - Main Terraform configuration with module calls
+- **`variables.tf`** - Variable declarations
+- **`variables.tfvars`** - Variable values (update these before deployment)
+- **`backend.tf`** - Terraform backend and provider configuration
+- **`modules/`** - Reusable Terraform modules
 
 ---
 

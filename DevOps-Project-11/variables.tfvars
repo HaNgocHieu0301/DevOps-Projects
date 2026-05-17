@@ -27,7 +27,7 @@ DB-SG-NAME  = "Two-Tier-db-sg"
 # RDS
 SG-NAME      = "two-tier-rds-sg"
 RDS-USERNAME = "admin"
-RDS-PWD      = "Admin1234"
+RDS-PWD      = "ChangeMe123!"  # Change this to a secure password
 DB-NAME      = "mydb"
 RDS-NAME     = "Two-Tier-RDS"
 
